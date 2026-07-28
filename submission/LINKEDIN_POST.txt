@@ -1,0 +1,22 @@
+LinkedIn post (copy & paste)
+===========================
+
+Excited to share my Codveda Technology Full-Stack internship project! 🚀
+
+I built and deployed a full-stack products application covering:
+
+✅ REST API with Express (CRUD)
+✅ MySQL/PostgreSQL with Sequelize ORM
+✅ JWT authentication & role-based access
+✅ HTML/CSS/JS frontend
+✅ Real-time updates with Socket.io
+✅ Deployment on Render
+
+🔗 GitHub: https://github.com/MRZEIN12/codveda_internship
+🌐 Live demo: https://coveda-internship.onrender.com
+
+Demo login: admin@coveda.test / admin123
+
+Grateful for the opportunity to learn and build with @Codveda
+
+#CodvedaJourney #CodvedaExperience #FutureWithCodveda #CodvedaProjects #CodvedaAchievements #FullStack #NodeJS #WebDevelopment

@@ -1,0 +1,12 @@
+{
+  "name": "codveda-internship",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "postinstall": "npm install --prefix ./level-1/rest-api",
+    "start": "npm --prefix ./level-1/rest-api start",
+    "seed": "npm --prefix ./level-1/rest-api run seed"
+  }
+}

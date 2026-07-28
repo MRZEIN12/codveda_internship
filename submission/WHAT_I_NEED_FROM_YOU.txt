@@ -1,0 +1,21 @@
+What I still need from you
+=========================
+
+1) Render redeploy
+   - Open coveda-internship → Manual Deploy → Clear build cache & deploy
+   - Confirm Environment has DATABASE_URL
+   - Tell me when deploy finishes (or paste last log lines if it fails)
+
+2) Your details for the form (reply with these)
+   - Full name:
+   - Email used for Codveda internship:
+   - Do you have the Codveda submission form link? (paste it if yes)
+
+3) LinkedIn + video (only you can publish)
+   - Record using submission/VIDEO_SCRIPT.txt
+   - Post using submission/LINKEDIN_POST.txt
+   - Send me the LinkedIn post URL when done
+
+4) Security
+   - Reset markethub-db password in Render (you shared it in chat earlier)
+   - Update DATABASE_URL with the new URL

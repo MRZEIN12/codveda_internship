@@ -1,0 +1,32 @@
+Video script (1–2 minutes)
+==========================
+
+[0:00–0:15] Intro
+"Hi, I'm [YOUR NAME]. This is my Codveda Full-Stack internship project — a products app with auth, database, and live updates."
+
+[0:15–0:35] Live site
+- Open https://coveda-internship.onrender.com
+- Show product list loading
+- Point to "Live" socket status
+
+[0:35–1:00] Auth
+- Go to Login
+- Sign in as admin@coveda.test
+- Show logged-in status
+
+[1:00–1:30] CRUD
+- Add a product
+- Edit it
+- Show Live Activity feed updating in real time
+- (Optional) open a second tab to prove WebSockets)
+
+[1:30–1:50] Code
+- Briefly show GitHub repo structure: rest-api, frontend, submission folders
+
+[1:50–2:00] Outro
+"Thanks Codveda for the internship opportunity. Links to GitHub and live demo are in the post."
+
+Recording tips:
+- Use phone or OBS
+- Upload to LinkedIn as a post video (or YouTube unlisted + link)
+- Speak clearly; keep it under 2 minutes

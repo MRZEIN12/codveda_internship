@@ -1,0 +1,33 @@
+Codveda Full-Stack Internship — Submission Answers
+==================================================
+
+Full name: [YOUR FULL NAME]
+Email: [YOUR INTERNSHIP EMAIL]
+Domain: Full-Stack Development
+Internship duration: 1 month
+
+GitHub repository:
+https://github.com/MRZEIN12/codveda_internship
+
+Live demo URL:
+https://coveda-internship.onrender.com
+
+Tasks completed:
+- Level 1: Task 1 (Setup), Task 2 (REST API), Task 3 (HTML/CSS/JS frontend)
+- Level 2: Task 2 (JWT Auth), Task 3 (Sequelize / Database)
+- Level 3: Task 1 (Full-stack + Render deploy), Task 2 (WebSockets)
+
+Project summary:
+I built a full-stack products app with Express, MySQL/Postgres (Sequelize),
+JWT authentication, role-based authorization, a vanilla HTML/CSS/JS frontend,
+real-time updates with Socket.io, and deployment on Render.
+
+Tech stack:
+Node.js, Express, Sequelize, MySQL (local), PostgreSQL (Render),
+JWT, bcrypt, Socket.io, HTML/CSS/JavaScript
+
+Demo login:
+admin@coveda.test / admin123
+
+Video / LinkedIn:
+[PASTE YOUR LINKEDIN POST URL AFTER YOU PUBLISH]

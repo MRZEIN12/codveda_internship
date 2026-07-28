@@ -2,7 +2,6 @@ services:
   - type: web
     name: coveda-internship
     runtime: node
-    rootDir: level-1/rest-api
     plan: free
     buildCommand: npm install
     startCommand: npm start
@@ -14,6 +13,5 @@ services:
         generateValue: true
       - key: JWT_EXPIRES_IN
         value: 1d
-      # Paste your existing free Postgres Internal Database URL in the Render dashboard
       - key: DATABASE_URL
         sync: false
