@@ -1,8 +1,8 @@
 Codveda Full-Stack Internship — Submission Answers
 ==================================================
 
-Full name: [YOUR FULL NAME]
-Email: [YOUR INTERNSHIP EMAIL]
+Full name: Hasan Zein
+Email: Hasanzein738@gmail.com
 Domain: Full-Stack Development
 Internship duration: 1 month
 
@@ -18,7 +18,7 @@ Tasks completed:
 - Level 3: Task 1 (Full-stack + Render deploy), Task 2 (WebSockets)
 
 Project summary:
-I built a full-stack products app with Express, MySQL/Postgres (Sequelize),
+I built a full-stack products app with Express, MySQL/PostgreSQL (Sequelize),
 JWT authentication, role-based authorization, a vanilla HTML/CSS/JS frontend,
 real-time updates with Socket.io, and deployment on Render.
 
@@ -31,3 +31,5 @@ admin@coveda.test / admin123
 
 Video / LinkedIn:
 [PASTE YOUR LINKEDIN POST URL AFTER YOU PUBLISH]
+
+Note: Submission form link not received yet — request it from support@codveda.com

@@ -3,7 +3,7 @@ LinkedIn post (copy & paste)
 
 Excited to share my Codveda Technology Full-Stack internship project! 🚀
 
-I built and deployed a full-stack products application covering:
+I'm Hasan Zein, and I built and deployed a full-stack products application covering:
 
 ✅ REST API with Express (CRUD)
 ✅ MySQL/PostgreSQL with Sequelize ORM
