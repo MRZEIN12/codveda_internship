@@ -2,6 +2,7 @@ services:
   - type: web
     name: coveda-internship
     runtime: node
+    rootDir: level-1/rest-api
     plan: free
     buildCommand: npm install
     startCommand: npm start
