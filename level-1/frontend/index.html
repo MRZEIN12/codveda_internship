@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codveda Products</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Codveda Products</h1>
+      <p>Level 3 — Live updates with WebSockets</p>
+      <nav class="top-nav">
+        <span id="auth-status" class="muted">Checking login...</span>
+        <span id="socket-status" class="socket-status">Connecting...</span>
+        <a id="login-link" href="login.html">Login</a>
+        <button type="button" id="logout-btn" class="secondary hidden">Logout</button>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="panel">
+        <h2>Live Activity</h2>
+        <ul id="live-feed" class="live-feed">
+          <li class="muted">Waiting for real-time events...</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2 id="form-title">Add Product</h2>
+        <form id="product-form">
+          <input type="hidden" id="product-id" />
+
+          <label>
+            Name
+            <input type="text" id="name" required placeholder="e.g. USB Cable" />
+          </label>
+
+          <label>
+            Description
+            <textarea id="description" rows="2" placeholder="Short description"></textarea>
+          </label>
+
+          <div class="row">
+            <label>
+              Price
+              <input type="number" id="price" min="0" step="0.01" required placeholder="0.00" />
+            </label>
+            <label>
+              Stock
+              <input type="number" id="stock" min="0" step="1" value="0" />
+            </label>
+          </div>
+
+          <div class="actions">
+            <button type="submit" id="submit-btn">Add Product</button>
+            <button type="button" id="cancel-btn" class="secondary hidden">Cancel Edit</button>
+          </div>
+        </form>
+        <p id="form-message" class="message" aria-live="polite"></p>
+      </section>
+
+      <section class="panel">
+        <div class="list-header">
+          <h2>Product List</h2>
+          <button type="button" id="refresh-btn" class="secondary">Refresh</button>
+        </div>
+        <p id="loading" class="muted">Loading products...</p>
+        <p id="list-error" class="message error hidden"></p>
+        <div id="products" class="products"></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

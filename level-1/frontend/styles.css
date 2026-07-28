@@ -1,0 +1,284 @@
+:root {
+  --bg: #f3f6f4;
+  --surface: #ffffff;
+  --text: #1a2e24;
+  --muted: #5c7268;
+  --accent: #1f6f54;
+  --accent-hover: #185a44;
+  --border: #d5e0da;
+  --danger: #b42318;
+  --shadow: 0 8px 24px rgba(26, 46, 36, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at top left, #d9efe4 0%, transparent 45%),
+    linear-gradient(180deg, #eef5f1 0%, var(--bg) 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.header {
+  padding: 2rem 1.25rem 1rem;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.container {
+  width: min(920px, calc(100% - 2rem));
+  margin: 0 auto 2.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.container.narrow {
+  width: min(480px, calc(100% - 2rem));
+}
+
+.top-nav {
+  margin-top: 0.85rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.top-nav a,
+.secondary-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.top-nav a:hover,
+.secondary-link:hover {
+  text-decoration: underline;
+}
+
+.hint {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.hint code {
+  background: #eef5f1;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+}
+
+form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fbfcfb;
+  color: var(--text);
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid rgba(31, 111, 84, 0.25);
+  border-color: var(--accent);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.actions,
+.list-header {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.list-header {
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.list-header h2 {
+  margin: 0;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+button.secondary {
+  background: #e8efeb;
+  color: var(--text);
+}
+
+button.secondary:hover {
+  background: #dce6e1;
+}
+
+button.danger {
+  background: #f8e8e6;
+  color: var(--danger);
+}
+
+button.danger:hover {
+  background: #f1d5d1;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.message {
+  min-height: 1.25rem;
+  margin: 0.75rem 0 0;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.message.error {
+  color: var(--danger);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.products {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.product-card {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #f9fbfa;
+}
+
+.product-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.product-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.socket-status {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: #f1d5d1;
+  color: var(--danger);
+}
+
+.socket-status.online {
+  background: #d9efe4;
+  color: var(--accent);
+}
+
+.live-feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+  max-height: 160px;
+  overflow: auto;
+  font-size: 0.9rem;
+}
+
+.live-feed li {
+  padding: 0.45rem 0.6rem;
+  background: #f9fbfa;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .actions,
+  .card-actions,
+  .list-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

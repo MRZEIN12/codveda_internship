@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login — Codveda</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Codveda Login</h1>
+      <p>Sign in to manage products</p>
+    </header>
+
+    <main class="container narrow">
+      <section class="panel">
+        <h2>Login</h2>
+        <form id="login-form">
+          <label>
+            Email
+            <input type="email" id="login-email" required placeholder="you@example.com" />
+          </label>
+          <label>
+            Password
+            <input type="password" id="login-password" required placeholder="Your password" />
+          </label>
+          <div class="actions">
+            <button type="submit">Login</button>
+            <a class="secondary-link" href="index.html">Back to products</a>
+          </div>
+        </form>
+        <p id="auth-message" class="message" aria-live="polite"></p>
+        <p class="muted hint">
+          Demo admin: <code>admin@coveda.test</code> / <code>admin123</code>
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Sign up</h2>
+        <form id="signup-form">
+          <label>
+            Name
+            <input type="text" id="signup-name" required placeholder="Your name" />
+          </label>
+          <label>
+            Email
+            <input type="email" id="signup-email" required placeholder="you@example.com" />
+          </label>
+          <label>
+            Password
+            <input type="password" id="signup-password" required minlength="6" placeholder="At least 6 characters" />
+          </label>
+          <div class="actions">
+            <button type="submit">Create account</button>
+          </div>
+        </form>
+        <p id="signup-message" class="message" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="auth.js"></script>
+  </body>
+</html>
