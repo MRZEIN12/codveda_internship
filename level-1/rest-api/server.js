@@ -60,18 +60,26 @@ async function ensureAdmin() {
 
 async function start() {
   try {
+    if (!process.env.DATABASE_URL && !process.env.DB_NAME) {
+      throw new Error(
+        "Missing DATABASE_URL (Render) or DB_NAME (local). Add DATABASE_URL in Render Environment."
+      );
+    }
+
     await sequelize.authenticate();
-    await sequelize.sync({ alter: true });
+    // alter:true can break on Postgres enums; create missing tables only
+    await sequelize.sync();
     console.log("Database connected via Sequelize");
 
     await ensureAdmin();
     initSocket(server);
 
-    server.listen(PORT, () => {
+    server.listen(PORT, "0.0.0.0", () => {
       console.log(`Server running on port ${PORT}`);
     });
   } catch (err) {
     console.error("Failed to start server:", err.message);
+    console.error(err);
     process.exit(1);
   }
 }

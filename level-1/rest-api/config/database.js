@@ -4,21 +4,37 @@ require("dotenv").config();
 /**
  * Local: MySQL via DB_* env vars
  * Render: Postgres via DATABASE_URL
+ * - External URL (*.render.com) needs SSL
+ * - Internal URL (dpg-xxxx-a) usually does NOT use SSL
  */
 function createSequelize() {
-  if (process.env.DATABASE_URL) {
-    return new Sequelize(process.env.DATABASE_URL, {
+  const databaseUrl = process.env.DATABASE_URL;
+
+  if (databaseUrl) {
+    const needsSsl =
+      process.env.DB_SSL === "true" ||
+      databaseUrl.includes("render.com") ||
+      databaseUrl.includes("sslmode=require");
+
+    console.log(
+      `Using Postgres DATABASE_URL (ssl=${needsSsl ? "on" : "off"})`
+    );
+
+    return new Sequelize(databaseUrl, {
       dialect: "postgres",
       logging: false,
-      dialectOptions: {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false,
-        },
-      },
+      dialectOptions: needsSsl
+        ? {
+            ssl: {
+              require: true,
+              rejectUnauthorized: false,
+            },
+          }
+        : {},
     });
   }
 
+  console.log("Using local MySQL DB_* settings");
   return new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
