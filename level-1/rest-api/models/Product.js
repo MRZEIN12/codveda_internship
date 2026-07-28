@@ -5,7 +5,7 @@ const Product = sequelize.define(
   "Product",
   {
     id: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
@@ -41,12 +41,12 @@ const Product = sequelize.define(
     },
     // Relationship field: which user created this product
     user_id: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
   },
   {
-    tableName: "products",
+    tableName: "products_codveda",
     timestamps: true,
     createdAt: "created_at",
     updatedAt: "updated_at",

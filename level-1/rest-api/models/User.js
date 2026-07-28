@@ -5,7 +5,7 @@ const User = sequelize.define(
   "User",
   {
     id: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
@@ -37,7 +37,7 @@ const User = sequelize.define(
     },
   },
   {
-    tableName: "users",
+    tableName: "users_codveda",
     timestamps: true,
     createdAt: "created_at",
     updatedAt: "updated_at",
