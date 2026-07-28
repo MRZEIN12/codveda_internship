@@ -5,9 +5,8 @@
     "node": ">=18"
   },
   "scripts": {
-    "install": "npm install --prefix level-1/rest-api",
-    "build": "npm install --prefix level-1/rest-api",
-    "start": "node level-1/rest-api/server.js",
-    "seed": "node level-1/rest-api/scripts/seedAdmin.js"
+    "postinstall": "npm install --prefix ./level-1/rest-api",
+    "start": "node ./level-1/rest-api/server.js",
+    "seed": "node ./level-1/rest-api/scripts/seedAdmin.js"
   }
 }
