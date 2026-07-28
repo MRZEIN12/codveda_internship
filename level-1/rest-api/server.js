@@ -2,9 +2,10 @@ const http = require("http");
 const path = require("path");
 const express = require("express");
 const cors = require("cors");
+const bcrypt = require("bcryptjs");
 require("dotenv").config();
 
-const { sequelize } = require("./models");
+const { sequelize, User } = require("./models");
 const { initSocket } = require("./socket");
 const productRoutes = require("./routes/products");
 const authRoutes = require("./routes/auth");
@@ -16,7 +17,6 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Health / API info
 app.get("/api", (req, res) => {
   res.json({ message: "Codveda REST API + WebSockets running" });
 });
@@ -24,7 +24,6 @@ app.get("/api", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 
-// Serve frontend (full-stack integration)
 app.use(express.static(path.join(__dirname, "../frontend")));
 
 app.use("/api", (req, res) => {
@@ -36,17 +35,40 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Internal server error" });
 });
 
+async function ensureAdmin() {
+  const email = process.env.ADMIN_EMAIL || "admin@coveda.test";
+  const password = process.env.ADMIN_PASSWORD || "admin123";
+  const hashed = await bcrypt.hash(password, 10);
+
+  const [user, created] = await User.findOrCreate({
+    where: { email },
+    defaults: {
+      name: "Admin User",
+      password: hashed,
+      role: "admin",
+    },
+  });
+
+  if (!created && !user.password) {
+    await user.update({ password: hashed, role: "admin" });
+  }
+
+  if (created) {
+    console.log(`Admin ready: ${email}`);
+  }
+}
+
 async function start() {
   try {
     await sequelize.authenticate();
     await sequelize.sync({ alter: true });
-    console.log("MySQL connected via Sequelize");
+    console.log("Database connected via Sequelize");
 
+    await ensureAdmin();
     initSocket(server);
 
     server.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
-      console.log(`Frontend: http://localhost:${PORT}/index.html`);
+      console.log(`Server running on port ${PORT}`);
     });
   } catch (err) {
     console.error("Failed to start server:", err.message);

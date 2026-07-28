@@ -1,4 +1,9 @@
-const AUTH_URL = "http://localhost:5000/api/auth";
+const AUTH_BASE =
+  window.location.protocol === "file:"
+    ? "http://localhost:5000"
+    : window.location.origin;
+
+const AUTH_URL = `${AUTH_BASE}/api/auth`;
 
 const loginForm = document.getElementById("login-form");
 const signupForm = document.getElementById("signup-form");

@@ -1,4 +1,10 @@
-const API_URL = "http://localhost:5000/api/products";
+// Same origin on Render; localhost when opening files directly
+const API_BASE =
+  window.location.protocol === "file:"
+    ? "http://localhost:5000"
+    : window.location.origin;
+
+const API_URL = `${API_BASE}/api/products`;
 
 const productsEl = document.getElementById("products");
 const loadingEl = document.getElementById("loading");
@@ -217,8 +223,7 @@ function setupSocket() {
   const liveFeed = document.getElementById("live-feed");
 
   // Connect to Socket.io server (same host as API)
-  const socket = io("http://localhost:5000");
-
+  const socket = io(API_BASE);
   socket.on("connect", () => {
     socketStatus.textContent = "Live";
     socketStatus.classList.add("online");
